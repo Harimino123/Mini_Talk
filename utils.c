@@ -15,16 +15,24 @@
 void add_char_to_list(t_list_node **head, char ch)
 {
     t_list_node *new_node;
+    t_list_node *temp;
 
-	new_node = malloc(sizeof(t_list_node));
+    new_node = malloc(sizeof(t_list_node));
     if (!new_node)
-        return ; // Handle memory allocation failure
+        return ;
     new_node->chrs = ch;
-    new_node->next = *head;
-    *head = new_node;
+    new_node->next = NULL;
+    if (*head == NULL)
+        *head = new_node;
+    else
+    {
+        temp = *head;
+        while (temp->next)
+            temp = temp->next;
+        temp->next = new_node;
+    }
 }
 
-// Function to print and clear the linked list
 void print_and_clear_list(t_list_node **head)
 {
     t_list_node *current;
@@ -38,7 +46,7 @@ void print_and_clear_list(t_list_node **head)
         free(current);
         current = next_node;
     }
-    *head = NULL; // Reset the head of the list
+    *head = NULL;
 }
 
 int	ft_atoi(const char *str)

@@ -16,9 +16,8 @@ void	handle_signal(int signal)
 {
 	static unsigned char	cur_char;
 	static int				bit_i;
-    static t_list_node *char_list;
+    static t_list_node *char_list = NULL;
 
-    char_list = NULL;
 	cur_char |= (signal == SIGUSR1);
 	bit_i++;
 	if (bit_i == 8)
