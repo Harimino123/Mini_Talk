@@ -27,7 +27,7 @@ void	send_signal(int pid, unsigned char chr)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
-		usleep(150);
+		usleep(100);
 	}
 }
 
