@@ -10,28 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
 
-# Directories
 SRCDIR = .
 OBJDIR = ./obj
 PRINTFDIR = ./Printf
 
-# Source files
 CLIENT_SRCS = client.c utils.c
 SERVER_SRCS = server.c utils.c
 
-# Object files
 CLIENT_OBJS = $(CLIENT_SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 SERVER_OBJS = $(SERVER_SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
-# Executables
 CLIENT = client
 SERVER = server
 
-# Targets
 all: $(CLIENT) $(SERVER)
 
 $(CLIENT): $(CLIENT_OBJS) $(PRINTFDIR)/libftprintf.a
