@@ -49,7 +49,7 @@ $(PRINTFDIR)/libftprintf.a:
 
 clean:
 	@$(MAKE) -C $(PRINTFDIR) clean
-	rm -rf $(OBJDIR) $(CLIENT) $(SERVER)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	@$(MAKE) -C $(PRINTFDIR) fclean
