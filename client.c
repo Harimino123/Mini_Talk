@@ -6,16 +6,16 @@
 /*   By: hrasolof <hrasolof@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 00:08:00 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/08/15 00:08:00 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:35:11 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void send_signal(int pid, unsigned char chr)
+void	send_signal(int pid, unsigned char chr)
 {
-	int i;
-	unsigned char temp_char;
+	int				i;
+	unsigned char	temp_char;
 
 	i = 8;
 	temp_char = chr;
@@ -31,11 +31,11 @@ void send_signal(int pid, unsigned char chr)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int server_pid;
-	const char *msg;
-	int i;
+	int			server_pid;
+	const char	*msg;
+	int			i;
 
 	if (argc == 3)
 	{

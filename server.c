@@ -6,11 +6,11 @@
 /*   By: hrasolof <hrasolof@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 00:07:36 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/08/15 00:07:36 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:33:45 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minitalk.h"
+#include "minitalk.h"
 
 void	handle_signal(int signal)
 {

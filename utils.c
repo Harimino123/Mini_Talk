@@ -6,47 +6,47 @@
 /*   By: hrasolof <hrasolof@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 00:07:46 by hrasolof          #+#    #+#             */
-/*   Updated: 2024/08/15 00:07:46 by hrasolof         ###   ########.fr       */
+/*   Updated: 2024/08/19 10:32:07 by hrasolof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minitalk.h"
+#include "minitalk.h"
 
-void add_char_to_list(t_list_node **head, char ch)
+void	add_char_to_list(t_list_node **head, char ch)
 {
-    t_list_node *new_node;
-    t_list_node *temp;
+	t_list_node	*new_node;
+	t_list_node	*temp;
 
-    new_node = malloc(sizeof(t_list_node));
-    if (!new_node)
-        return ;
-    new_node->chrs = ch;
-    new_node->next = NULL;
-    if (*head == NULL)
-        *head = new_node;
-    else
-    {
-        temp = *head;
-        while (temp->next)
-            temp = temp->next;
-        temp->next = new_node;
-    }
+	new_node = malloc(sizeof(t_list_node));
+	if (!new_node)
+		return ;
+	new_node->chrs = ch;
+	new_node->next = NULL;
+	if (*head == NULL)
+		*head = new_node;
+	else
+	{
+		temp = *head;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new_node;
+	}
 }
 
-void print_and_clear_list(t_list_node **head)
+void	print_and_clear_list(t_list_node **head)
 {
-    t_list_node *current;
-    t_list_node *next_node;
+	t_list_node	*current;
+	t_list_node	*next_node;
 
 	current = *head;
-    while (current)
-    {
-        ft_printf("%c", current->chrs);
-        next_node = current->next;
-        free(current);
-        current = next_node;
-    }
-    *head = NULL;
+	while (current)
+	{
+		ft_printf("%c", current->chrs);
+		next_node = current->next;
+		free(current);
+		current = next_node;
+	}
+	*head = NULL;
 }
 
 int	ft_atoi(const char *str)
